@@ -100,6 +100,12 @@ module.exports = function (grunt) {
         },
 
         copy: {
+            ivhTreeview: {
+                files: [
+                    {expand: false, src: ["node_modules/angular-ivh-treeview/dist/ivh-treeview.min.css"], dest: "dist/app/css/ivh-treeview.min.css"},
+                    {expand: false, src: ["node_modules/angular-ivh-treeview/dist/ivh-treeview.min.js"], dest: "dist/app/libs/ivh-treeview.min.js"}
+                ]
+            },
             license: {
                 files: [
                     {expand: false, src: ["LICENSE.md"], dest: "dist/app/LICENSE.md"}
@@ -262,11 +268,11 @@ module.exports = function (grunt) {
     // tasks
     grunt.registerTask("default", ["build"]);
 
-    grunt.registerTask("build", ["clean:app", "jshint", "browserify", "ngAnnotate:app", "htmlmin", "copy:style", "concat:css", "clean:style", "copy:materialize", "copy:sliderDirective", "copy:json", "copy:hammer", "copy:fontawesome", "copy:angular", "copy:images", "copy:jquery", "copy:license", "string-replace"]);
+    grunt.registerTask("build", ["clean:app", "jshint", "browserify", "ngAnnotate:app", "htmlmin", "copy:style", "concat:css", "clean:style", "copy:materialize", "copy:sliderDirective", "copy:json", "copy:hammer", "copy:fontawesome", "copy:angular", "copy:images", "copy:jquery", "copy:license", "copy:ivhTreeview", "string-replace"]);
     grunt.registerTask("test", ["clean:coverage", "mocha_istanbul"]);
     grunt.registerTask("doc", ["clean:doc", "exec:doc"]);
     grunt.registerTask("package", ["clean:package", "nwjs", "force:compress"]);
-    grunt.registerTask("quick", ["jshint", "browserify", "ngAnnotate:app", "htmlmin", "copy:style", "concat:css","copy:json", "clean:style", "copy:images", "string-replace"]);
+    grunt.registerTask("quick", ["jshint", "browserify", "ngAnnotate:app", "htmlmin", "copy:style", "concat:css","copy:json", "copy:ivhTreeview", "clean:style", "copy:images", "string-replace"]);
 
 
 };

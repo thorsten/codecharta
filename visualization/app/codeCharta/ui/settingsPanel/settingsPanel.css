@@ -1,3 +1,7 @@
 #colorSliderLabel {
     font-size: 1rem !important;
 }
+
+#settingsPanel {
+    overflow-y: scroll;
+}
