@@ -1,0 +1,41 @@
+{
+  "projectName": "Res",
+  "apiVersion": "1.0",
+  "nodes": [
+    {
+      "name": "root",
+      "type": "Folder",
+      "attributes": {},
+      "children": [
+        {
+          "name": "B",
+          "type": "Folder",
+          "attributes": {},
+          "link": "",
+          "children": [
+            {
+              "name": "A",
+              "type": "File",
+              "attributes": {
+                "a": 0.0,
+                "b": 1.0,
+                "c": 5.0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "A",
+          "type": "File",
+          "attributes": {
+            "a": 0.0,
+            "b": 1.0,
+            "c": 5.0
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

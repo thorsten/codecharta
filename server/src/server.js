@@ -1,20 +1,92 @@
-var express = require('express');
-var app = express();
+const WebSocket = require('ws');
+const { execSync } = require('child_process');
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+const wss = new WebSocket.Server({port: 8080});
 
 /**
- * ccsh sonarimport \<url of server> \<project id>
+ * socket
  */
-app.post('/analysis/import/sonar', function (req, res) {
-    // TODO get params
-    // TODO sonar code
-    // TODO async (returns id)
-    res.json({test:"hello"});
-});
+var socket = null;
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
-});
+const onSonarFinished = function (error, stdout, stderr) {
+
+    console.log("sonar analysis done");
+
+    if(!error && !stderr) {
+        socket.send(JSON.stringify(stdout));
+    } else {
+        socket.send(JSON.stringify({"stderr":stderr, "error":error}));
+    }
+
+};
+
+const onSonarMessage = function(task) {
+
+    //mandatory
+    if(task.url && task.projectId) {
+
+        //optional
+        var mergeModules = task.mergeModules ? true : false;
+
+        var cmd = "./src/codecharta-analysis/ccsh sonarimport "
+            + task.url
+            + " "
+            + task.projectId;
+
+        if(mergeModules) {
+            cmd += " " + "--mergeModules";
+        }
+
+        console.log("running cmd: " + cmd);
+
+        var exec = require('child_process').exec, child;
+        exec(cmd, onSonarFinished);
+
+    } else {
+        socket.send('sonar url and projectId must be defined');
+    }
+
+};
+
+/**
+ * on message
+ * @param message
+ */
+const onMessage = function (message) {
+
+    console.log('message received');
+
+    try {
+        var parsedMessage = JSON.parse(message);
+        console.log('message parsed');
+
+        switch (parsedMessage.type) {
+            case 'sonar':
+                console.log('sonar analysis');
+                onSonarMessage(parsedMessage);
+                break;
+            default:
+                socket.send('no type defined or invalid');
+        }
+
+    }
+    catch (err) {
+        socket.send('message could not be parsed: ' + err);
+    }
+
+};
+
+/**
+ * on connection
+ * @param ws
+ */
+const onConnection = function (ws) {
+    socket = ws;
+    socket.on('message', onMessage);
+    socket.send('connected');
+};
+
+/**
+ * initial call
+ */
+wss.on('connection', onConnection);
