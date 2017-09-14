@@ -3,35 +3,31 @@ import {$WebSocket, WebSocketSendMode} from 'angular2-websocket/angular2-websock
 
 @Injectable()
 export class WebsocketService {
-  websocket: $WebSocket;
+
+  get websocket(): $WebSocket {
+    return this._websocket;
+  }
+
+  private _websocket: $WebSocket;
 
   constructor() {
 
   }
 
   open(url: string) {
-    this.websocket = new $WebSocket(url);
-    this.websocket.onMessage(this.onMessage, {autoApply: false});
+    this._websocket = new $WebSocket(url);
+    this._websocket.setSend4Mode(WebSocketSendMode.Direct);
   }
 
   close() {
-    this.websocket.close(false);
+    this._websocket.close(false);
   }
 
   forceClose() {
-    this.websocket.close(true);
+    this._websocket.close(true);
   }
 
-  onMessage(messageEvent: MessageEvent) {
-    console.log('Message angekommen: ', messageEvent);
-  }
-
-  sendSample() {
-    let object = {
-      type: "sonar2",
-      url: "https://sonarcloud.io/",
-      projectId: "abap-sample-projet"
-    };
-    this.websocket.send(JSON.stringify(object)).publish().connect();
+  send(object: Object) {
+    this._websocket.send(JSON.stringify(object));
   }
 }

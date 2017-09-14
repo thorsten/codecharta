@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { WebsocketModule } from './websocket/websocket.module';
+import { AnalysisModule } from './analysis/analysis.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { WebsocketModule } from './websocket/websocket.module';
   ],
   imports: [
     BrowserModule,
-    WebsocketModule
+    WebsocketModule,
+    AnalysisModule
   ],
   providers: [],
   bootstrap: [AppComponent]
