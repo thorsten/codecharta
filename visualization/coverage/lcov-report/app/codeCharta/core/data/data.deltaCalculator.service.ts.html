@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/core/data/data.deltaCalculator.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">app/codeCharta/core/data</a> data.deltaCalculator.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.46% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>64/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.58% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>43/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>63/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+import * as d3 from "d3";
+import {CodeMap, CodeMapNode} from "./model/CodeMap";
+import {HierarchyNode} from "d3-hierarchy";
+import * as deepcopy from "deepcopy";
+&nbsp;
+interface KVObject {
+    [key: string]: number
+}
+&nbsp;
+/**
+ * Calculates the deltas between given maps and modifies the data structure
+ */
+export class DeltaCalculatorService {
+&nbsp;
+    /* @ngInject */
+    constructor() {
+&nbsp;
+    }
+&nbsp;
+    public decorateMapsWithDeltas(firstMap: CodeMap, secondMap: CodeMap) {
+&nbsp;
+        if (firstMap &amp;&amp; secondMap &amp;&amp; firstMap.root &amp;&amp; secondMap.root) {
+            let firstRoot = d3.hierarchy&lt;CodeMapNode&gt;(firstMap.root);
+            let firstLeaves: HierarchyNode&lt;CodeMapNode&gt;[] = firstRoot.leaves();
+            let secondRoot = d3.hierarchy(secondMap.root);
+            let secondLeaves: HierarchyNode&lt;CodeMapNode&gt;[] = secondRoot.leaves();
+&nbsp;
+            for (var j = 0; j &lt; firstLeaves.length; j++) {
+                for (var k = 0; k &lt; secondLeaves.length; k++) {
+&nbsp;
+                    let fl: HierarchyNode&lt;CodeMapNode&gt; = firstLeaves[j];
+                    let sl: HierarchyNode&lt;CodeMapNode&gt; = secondLeaves[k];
+&nbsp;
+                    if (fl.data.name === sl.data.name) {
+                        //calculate delta for those nodes attributes and push it to the second leave
+                        let firstDeltas = this.calculateAttributeListDelta(sl.data.attributes, fl.data.attributes);
+                        let secondDeltas = this.calculateAttributeListDelta(fl.data.attributes, sl.data.attributes);
+&nbsp;
+                        firstLeaves[j].data.deltas = firstDeltas;
+                        secondLeaves[k].data.deltas = secondDeltas;
+&nbsp;
+                    }
+                }
+            }
+&nbsp;
+        }
+&nbsp;
+    }
+&nbsp;
+    /**
+     * Unifies both maps and inserts unique nodes into the other map. The inserted nodes have all metrics set to zero.
+     * This will calculate deltas correctly between versions and add "empty" buildings to ensure all revisions have an
+     * e<span class="missing-if-branch" title="else path not taken" >E</span>qual building pool. These empty buildings should be viewed with the unary metric as area
+     * @param {CodeMap} leftMap
+     * @param {CodeMap} rightMap
+     * @returns {{leftMap: CodeMap; rightMap: CodeMap}}
+     */
+    public fillMapsWithNonExistingNodesFromOtherMap(leftMap: CodeMap, rightMap: CodeMap): { leftMap: CodeMap; rightMap: CodeMap; } {
+        if (leftMap &amp;&amp; rightMap &amp;&amp; leftMap.root &amp;&amp; rightMap.root) {
+&nbsp;
+            let leftMapCopy: CodeMap = deepcopy.default(leftMap);
+            let rightMapCopy: CodeMap = deepcopy.default(rightMap);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            let leftRoot</span> = d3.hierarchy&lt;CodeMapNode&gt;(leftMapCopy.root);
+            let rightRoot = d3.hierarchy&lt;CodeMapNode&gt;(rightMapCopy.root);
+&nbsp;
+            this.insertLeftIntoRightWithZeroMetrics(leftRoot, rightRoot);
+            this.insertLeftIntoRightWithZeroMetrics(rightRoot, leftRoot);
+<span class="missing-if-branch" title="else path not taken" >E</span>
+            return {leftMap: leftMapCopy, rightMap: rightMapCopy};
+&nbsp;
+        } else {
+            return {leftMap: leftMap, rightMap: rightMap};
+        }
+    }
+&nbsp;
+    public removeCrossOriginNodes(map: CodeMap): CodeMap {
+        if (map &amp;&amp; map.root) {
+&nbsp;
+            let mapCopy: CodeMap = deepcopy.default(map);
+&nbsp;
+            let mapRoot = d3.hierarchy&lt;CodeMapNode&gt;(mapCopy.root);
+            mapRoot.each((node)=&gt;{
+                if(node.data.children) {
+                    node.data.children = node.data.children.filter(x =&gt; (x.origin === mapCopy.fileName));
+                }
+            });
+&nbsp;
+            return mapCopy;
+&nbsp;
+        } else {
+            return map;
+        }
+    }
+&nbsp;
+    private insertLeftIntoRightWithZeroMetrics(left: HierarchyNode&lt;CodeMapNode&gt;, right: HierarchyNode&lt;CodeMapNode&gt;) {
+&nbsp;
+        // are these nodes mergable (same name and have children)?
+        if (left.data.name === right.data.name &amp;&amp; left.children != undefined &amp;&amp; right.children != undefined &amp;&amp; left.children.length &gt; 0 &amp;&amp; right.children.length &gt; 0) {
+&nbsp;
+            left.children.forEach((leftChild) =&gt; {
+&nbsp;
+                let leftChildExistsInRight = this.childExistsInHierarchy(right, leftChild);
+&nbsp;
+                //if left child does not exist in the right node's children, insert it as a new valueless node into rights children
+                if (!leftChildExistsInRight) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>        let copy = this.deepcopy(leftChild);
+                    right.data.children.push(copy.data);
+                } else {
+                    // if left child exists in right nodes children, skip, since we only look for direct children
+                    right.children.forEach((rightChildInner) =&gt; {
+                        left.children.forEach((leftChildInner) =&gt; {
+                            //step in with pre-filtering
+                <span class="missing-if-branch" title="else path not taken" >E</span>            if (leftChildInner.data.name !== leftChild.data.name) {
+                                if (leftChildInner.data.name === rightChildInner.data.name &amp;&amp; leftChildInner.children != undefined &amp;&amp; rightChildInner.children != undefined &amp;&amp; leftChildInner.children.length &gt; 0 &amp;&amp; rightChildInner.children.length &gt; 0) {
+                                    this.insertLeftIntoRightWithZeroMetrics(leftChildInner, rightChildInner);
+                                }
+                            }
+                        });
+                    });
+                }
+&nbsp;
+            });
+<span class="missing-if-branch" title="else path not taken" >E</span>
+        }
+    }
+&nbsp;
+    private childExistsInHierarchy(hierarchy: HierarchyNode&lt;CodeMapNode&gt;, child: HierarchyNode&lt;CodeMapNode&gt;): boolean {
+        let tmp = false;
+        hierarchy.children.forEach((rightChild) =&gt; {
+            if (child.data.name === rightChild.data.name) {
+                tmp = true;
+            }
+        });
+        return tmp;
+    }
+&nbsp;
+    private deepcopy(nodes: HierarchyNode&lt;CodeMapNode&gt;): HierarchyNode&lt;CodeMapNode&gt; {
+&nbsp;
+        //deepcopy
+        let copy: HierarchyNode&lt;CodeMapNode&gt; = deepcopy.default(nodes.copy()); //Hm this seems to be doing the right thing. First shallow copy then a deep copy ?!
+&nbsp;
+        //make own attributes 0
+        for (let property in copy.data.attributes) {
+            if (copy.data.attributes.hasOwnProperty(property)) {
+                copy.data.attributes[property] = 0;
+            }
+        }
+&nbsp;
+        ////make all ancestors attributes 0
+        copy.each((node) =&gt; {
+            for (var property in node.data.attributes) {
+                if (node.data.attributes.hasOwnProperty(property)) {
+                    node.data.attributes[property] = 0;
+                }
+            }
+        });
+&nbsp;
+        return copy;
+&nbsp;
+    }
+&nbsp;
+    calculateAttributeListDelta(first: KVObject, second: KVObject) {
+        let deltas = {};
+        for (var key in second) {
+            if (key) {
+                let firstValue = first[key] ? first[key] : 0; //assume zero if no value in first
+                let secondValue = second[key];
+                let delta = secondValue - firstValue;
+                deltas[key] = delta;
+            }
+        }
+        return deltas;
+    }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

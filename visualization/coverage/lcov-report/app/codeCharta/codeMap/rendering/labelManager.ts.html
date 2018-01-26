@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/rendering/labelManager.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap/rendering</a> labelManager.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>52/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>52/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as THREE from "three";
+import {node} from "./node"
+import {renderSettings} from "./renderSettings"
+&nbsp;
+interface internalLabel {
+    sprite : THREE.Sprite,
+    line : THREE.Line | null,
+    heightValue : number
+}
+&nbsp;
+export class LabelManager {
+    private parentObjectInScene : THREE.Object3D;
+    private labels : internalLabel[];
+&nbsp;
+    constructor(argParentObjectInScene : THREE.Object3D) {
+        this.parentObjectInScene = argParentObjectInScene;
+        this.labels = new Array&lt;internalLabel&gt;();
+    }
+&nbsp;
+    addLabel(node : node, settings : renderSettings) : void {
+        if(node.attributes &amp;&amp; node.attributes[settings.heightKey]){
+&nbsp;
+            let x : number = node.x0 - settings.mapSize * 0.5;
+            let y : number = node.z0;
+            let z : number = node.y0 - settings.mapSize * 0.5;
+&nbsp;
+            let w : number = node.width;
+            let h : number = node.height;
+            let l : number = node.length;
+&nbsp;
+            let label : internalLabel = this.makeText(node.name + ": " + node.attributes[settings.heightKey], 30);
+            label.sprite.position.set(x+w/2,y+60+h + label.heightValue/2,z+l/2);
+&nbsp;
+            const material = new THREE.LineBasicMaterial({
+                color: 0x0000ff
+            });
+        
+            const geometry = new THREE.Geometry();
+            geometry.vertices.push(
+                new THREE.Vector3(x + w / 2, y + h, z + l / 2),
+                new THREE.Vector3(x + w / 2, y + h + 60, z + l / 2)
+            );
+        
+            label.line = new THREE.Line(geometry, material);
+&nbsp;
+            this.parentObjectInScene.add(label.sprite);
+            this.parentObjectInScene.add(label.line);
+&nbsp;
+            this.labels.push(label);
+        }
+    }
+        
+    scale(x : number, y : number, z : number) {
+        for(let label of this.labels) {
+            label.sprite.position.x *= x;
+            label.sprite.position.y *= y;
+            label.sprite.position.z *= z;
+&nbsp;
+            //cast is a workaround for the compiler. Attribute vertices does exist on geometry
+            //but it is missing in the mapping file for TypeScript.
+            (&lt;any&gt;label.line!.geometry).vertices[0].x *= x;
+            (&lt;any&gt;label.line!.geometry).vertices[0].y *= y;
+            (&lt;any&gt;label.line!.geometry).vertices[0].z *= z;
+&nbsp;
+            (&lt;any&gt;label.line!.geometry).vertices[1].x = label.sprite.position.x;
+            (&lt;any&gt;label.line!.geometry).vertices[1].y = label.sprite.position.y;
+            (&lt;any&gt;label.line!.geometry).vertices[1].z = label.sprite.position.z;
+        }
+    }
+        
+    /**
+    * Returns a text sprite
+    * @param {string} message
+    * @param {number} fontsize
+    * @returns {THREE.Sprite}
+    */
+    makeText(message : string, fontsize : number) : internalLabel {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx!.font = fontsize + "px Arial";
+    
+        const margin = 10;
+    
+        // setting canvas width/height before ctx draw, else canvas is empty
+        const w = ctx!.measureText(message).width;
+        const h = fontsize;
+        canvas.width = w + margin;
+        canvas.height = h + margin; // fontsize * 1.5
+        
+        //bg
+        ctx!.fillStyle = "rgba(255,255,255,1)";
+        ctx!.strokeStyle = "rgba(0,0,255,1)";
+        ctx!.fillRect(0,0,canvas.width, canvas.height);
+        ctx!.strokeRect(0,0,canvas.width, canvas.height);
+        
+        // after setting the canvas width/height we have to re-set font to apply!?! looks like ctx reset
+        ctx!.font = h + "px Arial";
+        ctx!.fillStyle = "rgba(0,0,0,1)";
+        ctx!.textAlign = "center";
+        ctx!.textBaseline = "middle";
+        ctx!.fillText(message, canvas.width / 2, canvas.height / 2);
+        
+        const texture = new THREE.Texture(canvas);
+        texture.minFilter = THREE.LinearFilter; // NearestFilter;
+        texture.needsUpdate = true;
+        
+        const spriteMaterial = new THREE.SpriteMaterial({map : texture});
+        const sprite = new THREE.Sprite(spriteMaterial);
+        sprite.scale.set(canvas.width,canvas.height,1);
+&nbsp;
+        return {
+            "sprite" : sprite,
+            "heightValue" : canvas.height,
+            "line" : null
+        };
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

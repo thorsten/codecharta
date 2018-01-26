@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/threeViewer/threeViewerService.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap/threeViewer</a> threeViewerService.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.55% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+import {ThreeSceneService} from "./threeSceneService";
+import {ThreeCameraService} from "./threeCameraService";
+import {ThreeOrbitControlsService} from "./threeOrbitControlsService";
+import {ThreeRendererService} from "./threeRendererService";
+import {ThreeUpdateCycleService} from "./threeUpdateCycleService";
+impo<span class="fstat-no" title="function not covered" >rt</span> {SettingsService} from "../../core/settings/settings.service";
+<span class="cstat-no" title="statement not covered" ></span>
+/**<span class="cstat-no" title="statement not covered" ></span>
+ * A ser<span class="cstat-no" title="statement not covered" >vice to angularize the Three.js canvas.</span>
+ */<span class="cstat-no" title="statement not covered" ></span>
+export c<span class="cstat-no" title="statement not covered" >lass ThreeViewerService {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    public static SELECTOR = "threeViewerService";
+&nbsp;
+    /* ngInject */
+    constructor(
+        private threeSceneService: ThreeSceneService,
+<span class="fstat-no" title="function not covered" ></span>        private threeCameraService: ThreeCameraService,
+<span class="cstat-no" title="statement not covered" >        private threeOrbitControlsService: ThreeOrbitControlsService,</span>
+<span class="cstat-no" title="statement not covered" >        private threeRendererService: ThreeRendererService,</span>
+<span class="cstat-no" title="statement not covered" >        private threeUpdateCycleService: ThreeUpdateCycleService,</span>
+        private settingsService: SettingsService
+    ) {<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+    }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+    /**<span class="cstat-no" title="statement not covered" ></span>
+     * Initializes the canvas and all necessary services.
+     * @<span class="cstat-no" title="statement not covered" >param {Object} element DOM Element which should be the canvas</span>
+     */
+    init(element: Element) {
+&nbsp;
+        this.threeCameraService.init(
+<span class="fstat-no" title="function not covered" ></span>            this.settingsService,
+<span class="cstat-no" title="statement not covered" >            window.innerWidth,</span>
+<span class="cstat-no" title="statement not covered" >            window.innerHeight,</span>
+<span class="cstat-no" title="statement not covered" >            this.settingsService.settings.camera.x,</span>
+<span class="cstat-no" title="statement not covered" >            this.settingsService.settings.camera.y,</span>
+            this.settingsService.settings.camera.z
+        );
+&nbsp;
+        this.threeCameraService.camera.lookAt(this.threeSceneService.scene.position);
+<span class="fstat-no" title="function not covered" ></span>        this.threeSceneService.scene.add(this.threeCameraService.camera);
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // create the renderer</span>
+<span class="cstat-no" title="statement not covered" >        this.threeRendererService.init(window.innerWidth, </span>window.innerHeight);
+<span class="cstat-no" title="statement not covered" ></span>
+        // set up the controls with the camera and renderer
+        this.threeOrbitControlsService.init(this.threeRendererService.renderer.domElement);
+&nbsp;
+        // add renderer to DOM
+        element.appendChild(this.threeRendererService.renderer.domElement);
+&nbsp;
+        // handles resizing the renderer when the window is resized
+        window.addEventListener("resize", this.onWindowResize.bind(this), false);
+    }
+&nbsp;
+    /**
+     * Applies transformations on window resize.
+     */
+    onWindowResize() {
+        this.threeSceneService.scene.updateMatrixWorld(false);
+&nbsp;
+        this.threeRendererService.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.threeCameraService.camera.aspect = window.innerWidth / window.innerHeight;
+        this.threeCameraService.camera.updateProjectionMatrix();
+    }
+&nbsp;
+    /**
+     * Calls the animation loop.
+     */
+    animate() {
+        requestAnimationFrame(this.animate.bind(this));
+        this.threeRendererService.renderer.render(this.threeSceneService.scene, this.threeCameraService.camera);
+        this.threeOrbitControlsService.controls.update();
+        this.threeUpdateCycleService.update();
+    }
+&nbsp;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

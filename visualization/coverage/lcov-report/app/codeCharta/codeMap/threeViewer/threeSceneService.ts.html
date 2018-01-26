@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/threeViewer/threeSceneService.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap/threeViewer</a> threeSceneService.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.19% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>32/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.19% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/42</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as THREE from "three";
+import {LabelManager} from "./../rendering/labelManager"
+import {Scene} from "three";
+import {Group} from "three";
+import {CodeMapMesh} from "../rendering/codeMapMesh";
+&nbsp;
+/**
+ * A service which manages the Three.js scene in an angular way.
+ */
+class ThreeSceneService {
+&nbsp;
+    public static SELECTOR = "threeSceneService";
+&nbsp;
+    scene: Scene;
+    private labelManager: LabelManager;
+    private lights: Group;
+    private labels: Group;
+    private mapGeometry: Group;
+    private mapMesh: CodeMapMesh;
+&nbsp;
+    constructor() {
+&nbsp;
+        this.scene = new THREE.Scene();
+&nbsp;
+        this.mapGeometry = new THREE.Group();
+        this.lights = new THREE.Group();
+        this.labels = new THREE.Group();
+&nbsp;
+        this.labelManager = new LabelManager(this.labels);
+&nbsp;
+        this.initLights();
+&nbsp;
+        this.scene.add(this.mapGeometry);
+        this.scene.add(this.lights);
+        this.scene.add(this.labels);
+&nbsp;
+    }
+&nbsp;
+    initLights() {
+        const ambilight = new THREE.AmbientLight(0x707070); // soft white light
+        const light1 = new THREE.DirectionalLight(0xe0e0e0, 1);
+<span class="fstat-no" title="function not covered" ></span>        light1.position.set(50, 10, 8).normalize();
+<span class="cstat-no" title="statement not covered" >        light1.castShadow = f</span>alse;
+<span class="cstat-no" title="statement not covered" >        light1.shadow.camera.right = 5;</span>
+        ligh<span class="cstat-no" title="statement not covered" >t1.shadow.camera.left = -5;</span>
+        light1.shadow.camera.top = 5;
+<span class="cstat-no" title="statement not covered" >        light1.shadow.camera.bottom = -5;</span>
+<span class="cstat-no" title="statement not covered" >        light1.shadow.camera.near = 2;</span>
+<span class="cstat-no" title="statement not covered" >        light1.shadow.camera.far = 100;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        const light2 = new THREE.DirectionalLight(0xe0e0e0, 1);
+<span class="fstat-no" title="function not covered" ></span>        light2.position.set(-50, 10, -8).normalize();
+<span class="cstat-no" title="statement not covered" >        light2.castShadow = false;</span>
+        ligh<span class="cstat-no" title="statement not covered" >t2.shadow.camera.right = 5;</span>
+        light2.shadow.camera.left = -5;
+<span class="fstat-no" title="function not covered" ></span>        light2.shadow.camera.top = 5;
+<span class="cstat-no" title="statement not covered" >        light2.shadow.camera.</span>bottom = -5;
+        light2.shadow.camera.near = 2;
+        light2.shadow.camera.far = 100;
+&nbsp;
+        this.lights.add(ambilight);
+        this.lights.add(light1);
+        this.lights.add(light2);
+    }
+&nbsp;
+    setMapMesh(mesh: CodeMapMesh, size: number) {
+        this.mapMesh = mesh;
+&nbsp;
+        while (this.mapGeometry.children.length &gt; 0) {
+            this.mapGeometry.remove(
+                this.mapGeometry.children[0]
+            );
+        }
+&nbsp;
+        this.mapGeometry.add(mesh.getThreeMesh());
+&nbsp;
+        this.mapGeometry.position.x = -size / 2.0;
+        this.mapGeometry.position.y = 0.0;
+        this.mapGeometry.position.z = -size / 2.0;
+    }
+&nbsp;
+    clearLabels() {
+        while (this.labels.children.length &gt; 0)
+            this.labels.children.pop();
+    }
+&nbsp;
+    getMapMesh(): CodeMapMesh {
+        return this.mapMesh;
+    }
+}
+&nbsp;
+export {ThreeSceneService};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

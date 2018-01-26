@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/codeMapService.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap</a> codeMapService.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.53% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/34</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+import {CodeMapMesh} from "./rendering/codeMapMesh";
+import {renderSettings} from "./rendering/renderSettings"
+import {LabelManager} from "./rendering/labelManager"
+import {SettingsServiceSubscriber, Settings, SettingsService} from "../core/settings/settings.service";
+import {node} from "./rendering/node";
+&nbsp;
+const mapSize = 500.0;
+&nbsp;
+/**
+ * Main service to manage the state of the rendered code map
+ */
+export class CodeMapService implements SettingsServiceSubscriber{
+&nbsp;
+    public static SELECTOR = "codeMapService";
+&nbsp;
+<span class="fstat-no" title="function not covered" >    pr</span>ivate mapMesh: CodeMapMesh = null;
+    priv<span class="cstat-no" title="statement not covered" >ate labelManager: LabelManager</span> = null;
+&nbsp;
+    /* @ngInject */
+    constructor(
+        private threeSceneService,
+        private treeMapService,
+        private settingsService: SettingsService) {
+<span class="fstat-no" title="function not covered" ></span>        this.settingsService.subscribe(this);
+    }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+    onSettingsChanged(settings: Settings, event: Event) {
+<span class="cstat-no" title="statement not covered" >        this.applySettings(settings);</span>
+    }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+    /**
+<span class="fstat-no" title="function not covered" >     *</span> Applies the given settings and redraws the scene
+     * @param {Setti<span class="cstat-no" title="statement not covered" >ngs} s</span>
+     * @listens {sett<span class="cstat-no" title="statement not covered" >ings-change<span class="fstat-no" title="function not covered" >d}<span class="cstat-no" title="statement not covered" ></span></span></span>
+     */<span class="cstat-no" title="statement not covered" ></span>
+    applySettings(s: Settings) {
+&nbsp;
+        if (s.areaMetric &amp;&amp; s.heightMetric &amp;&amp; s.colorMetric &amp;&amp; s.map &amp;&amp; s.map.root &amp;&amp; s.neutralColorRange &amp;&amp; s.deltaColorFlipped != undefined) {
+            this.updateMapGeometry(s);
+        }
+&nbsp;
+        if(s.scaling &amp;&amp; s.scaling.x &amp;&amp; s.scaling.y &amp;&amp;s.scaling.z) {
+<span class="cstat-no" title="statement not covered" >            this.scaleMap(s.scaling.x, s.scali</span>ng.y, s.scaling.z);
+<span class="cstat-no" title="statement not covered" >        }</span>
+    }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+    updateMapGeo<span class="cstat-no" title="statement not covered" >metry(s) {</span>
+        let node<span class="cstat-no" title="statement not covered" >s = this.tre</span>eMapService.createTreemapNodes(s.map.root, mapSize, mapSize, s.margin, s.areaMetric, s.heightMetric);
+        let sorted: node[] = nodes.sort((a,b)=&gt;{return b.height - a.height;});
+        let renderSettings: renderSettings  =  {
+<span class="cstat-no" title="statement not covered" >            heightKey : s.heightMetric,</span>
+<span class="cstat-no" title="statement not covered" >            colorKey : s.colorMetric,</span>
+            renderDeltas : s.deltas,
+            colorRange : s.neutralColorRange,
+            mapSize : mapSize,
+            deltaColorFlipped: s.deltaColorFlipped
+        };
+&nbsp;
+        this.threeSceneService.clearLabels();
+<span class="fstat-no" title="function not covered" ></span>        this.labelManager = new LabelManager(this.threeSceneService.labels);
+        <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        for (let i=0, numAdded = 0; i &lt; sorted.length &amp;&amp;</span> numAdded &lt; s.amountOfTopLabels; ++i)
+<span class="cstat-no" title="statement not covered" >        {</span>
+<span class="cstat-no" title="statement not covered" >            if (sorted[i].isLeaf)</span>
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >                this.labelManager.addLabel(sorted[i], renderSettings);</span>
+<span class="cstat-no" title="statement not covered" >                ++numAdded;</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        this.mapMesh = new CodeMapMesh(sorted, renderSettings);
+&nbsp;
+        this.threeSceneService.setMapMesh(this.mapMesh, mapSize);
+    }
+&nbsp;
+     /**
+     * scales the scene by the given values
+     * @param {number} x
+     * @param {number} y
+     * @param {number} z
+     */
+    scaleMap(x, y, z) {
+        this.threeSceneService.mapGeometry.scale.x = x;
+        this.threeSceneService.mapGeometry.scale.y = y;
+        this.threeSceneService.mapGeometry.scale.z = z;
+&nbsp;
+        this.threeSceneService.mapGeometry.position.x = -mapSize / 2.0 * x;
+        this.threeSceneService.mapGeometry.position.y = 0.0;
+        this.threeSceneService.mapGeometry.position.z = -mapSize / 2.0 * z;
+&nbsp;
+        if (this.threeSceneService.getMapMesh())
+            this.threeSceneService.getMapMesh().setScale(x, y, z);
+&nbsp;
+        if (this.labelManager)
+            this.labelManager.scale(x, y, z);
+    }
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

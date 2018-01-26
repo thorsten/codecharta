@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/codeMapComponent.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap</a> codeMapComponent.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.92% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {codeMapBuilding} from "./rendering/codeMapBuilding"
+import {ThreeCameraService} from "./threeViewer/threeCameraService";
+import {IAngularEvent, IRootScopeService} from "angular";
+import {ThreeViewerService} from "./threeViewer/threeViewerService";
+import {CodeMapService} from "./codeMapService";
+<span class="fstat-no" title="function not covered" ></span>
+interfac<span class="cstat-no" title="statement not covered" >e Coordinates {</span>
+    x: n<span class="cstat-no" title="statement not covered" >umber,</span>
+    y: n<span class="cstat-no" title="statement not covered" >umber</span>
+}<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+export i<span class="cstat-no" title="statement not covered" >nterface CodeMapBuildingTransition {</span>
+    from<span class="cstat-no" title="statement not covered" >: codeMapBuilding,</span>
+    to: <span class="cstat-no" title="statement not covered" >codeMapBuilding</span>
+}
+&nbsp;
+export interface CodeMapControllerSubscriber {
+    onBuildingHovered(data: CodeMapBuildingTransition, event: IAngularEvent),
+    onBu<span class="cstat-no" title="statement not covered" >ildingSelected(data: </span>CodeMapBuildingTransition, event: IAngularEvent)
+}
+&nbsp;
+/**
+ * Controls the codeMapDirective
+ */<span class="cstat-no" title="statement not covered" ></span>
+export class CodeMapController {
+&nbsp;
+    private hovered;
+    private selected;
+    priv<span class="cstat-no" title="statement not covered" >ate mouse: Coordinates;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    /* @<span class="cstat-no" title="statement not covered" >ngInject */</span>
+    cons<span class="cstat-no" title="statement not covered" >tructor(</span>
+        private $rootScope,
+<span class="fstat-no" title="function not covered" ></span>        private threeCameraService: ThreeCameraService,
+<span class="cstat-no" title="statement not covered" >        private threeRendererService,</span>
+<span class="cstat-no" title="statement not covered" >        private threeSceneService,</span>
+        private threeUpdateCycleService,
+<span class="fstat-no" title="function not covered" ></span>        private threeViewerService: ThreeViewerService,
+<span class="cstat-no" title="statement not covered" >        private $element: Element,<span class="fstat-no" title="function not covered" ></span></span>
+        priv<span class="cstat-no" title="statement not covered" >ate codeMapService: CodeMapService, //w</span>e need to call this service somewhere.
+    ){
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
+        /**<span class="cstat-no" title="statement not covered" ></span>
+         * hovered mesh
+         * @type {object}
+         */
+        this.hovered = null;
+&nbsp;
+<span class="fstat-no" title="function not covered" ></span>        /**
+<span class="cstat-no" title="statement not covered" >         * selected mesh</span>
+<span class="cstat-no" title="statement not covered" >         * @type {object}</span>
+         */<span class="cstat-no" title="statement not covered" ></span>
+        this.selected =<span class="cstat-no" title="statement not covered" > null;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        /**<span class="cstat-no" title="statement not covered" ></span>
+         * curre<span class="cstat-no" title="statement not covered" >nt mouse position</span>
+         * @type {{x: number, y: number}}
+         */
+        this.mou<span class="cstat-no" title="statement not covered" >se = {x: 0,</span> y: 0};
+&nbsp;
+        docu<span class="cstat-no" title="statement not covered" >ment.addEventListener("mousemove", this.onDocumentMouseMove.bind(this), false);</span>
+        document<span class="cstat-no" title="statement not covered" >.addEventListener("click", this.on</span>DocumentMouseDown.bind(this), false);
+<span class="cstat-no" title="statement not covered" ></span>
+        threeUpdateCycleService.register(this.update.bind(this));
+    }
+&nbsp;
+    $postLink() {
+        this.threeViewerService.init(this.$element[0]);
+        this.threeViewerService.animate();
+    }
+<span class="fstat-no" title="function not covered" ></span>
+    stat<span class="cstat-no" title="statement not covered" >ic subscribe($rootScope: IRootScopeService, subscriber: CodeMapControllerSubscriber) {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        $rootScope.$on("building-hovered", (e, data:CodeMapBuildingTransition) =&gt; {
+            subscriber.onBuildingHovered(data, e);
+        });
+&nbsp;
+<span class="fstat-no" title="function not covered" ></span>        $rootScope.$on("building-selected", (e, data:CodeMapBuildingTransition) =&gt; {
+            subscri<span class="cstat-no" title="statement not covered" >ber.onBuilding</span>Selected(data, e);
+<span class="cstat-no" title="statement not covered" >        });</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+    /**<span class="cstat-no" title="statement not covered" ></span>
+     * Updat<span class="cstat-no" title="statement not covered" >e method which is boun</span>d to the {@link UpdateCycleService}
+     */<span class="cstat-no" title="statement not covered" ></span>
+    update() {
+        this.threeCameraService.camera.updateMatrixWorld(false);
+&nbsp;
+        if (this.threeSceneService.getMapMesh() != null)
+        {
+            let intersectionResult = this.threeSceneService.getMapMesh().checkMouseRayMeshIntersection(this.mouse, this.threeCameraService.camera);
+&nbsp;
+            let from = this.hovered;
+<span class="fstat-no" title="function not covered" ></span>            let to = null;
+&nbsp;
+            if (intersectionResult.intersectionFound == true)
+            {
+                to = intersectionResult.building;
+            }
+            else
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >                to = null;</span>
+            }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+            if (from != to)
+<span class="cstat-no" title="statement not covered" >            {</span>
+<span class="cstat-no" title="statement not covered" >                this.onBuildingHovered(from, to);</span>
+<span class="cstat-no" title="statement not covered" >                this.hovered = to;</span>
+            }
+        }
+    }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+    /**
+     * updates {CodeMapController.mouse} on mouse movement
+     * @param {MouseEvent} event
+     */
+    onDocumentMouseMove (event) {
+        this.mouse.x = ( event.clientX / this.threeRendererService.renderer.domElement.width ) * 2 - 1;
+        this.mouse.y = -( event.clientY / this.threeRendererService.renderer.domElement.height ) * 2 + 1;
+<span class="fstat-no" title="function not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    /**<span class="cstat-no" title="statement not covered" ></span>
+     * updat<span class="cstat-no" title="statement not covered" >es {CodeMapController} on mouse down</span>
+     */
+    onDocumentMouseDown() {
+        var <span class="cstat-no" title="statement not covered" >from = this.selected;</span>
+&nbsp;
+        if (this.hovered) {
+            this.selected = this.hovered;
+            this.onBuildingSelected(from, this.selected);
+        }
+&nbsp;
+        if(!this.hovered &amp;&amp; this.selected) {
+            this.selected = null;
+            this.onBuildingSelected(from, null);
+        }
+&nbsp;
+    }
+&nbsp;
+    /**
+     * Called when a building is hovered.
+     * @param from old building
+     * @param to new building
+     * @emits {building-hovered} on hover
+     */
+    onBuildingHovered(from: codeMapBuilding, to: codeMapBuilding){
+        /*
+         if the hovered node does not have useful data, then we should look at its parent. If the parent has useful data
+         then this parent is a delta node which is made of two seperate, data-free nodes. This quick fix helps us to
+         handle delta objects, until there is a method for mergng their meshes and materials correctly.
+         See codeMapService.js
+         */
+        if(to &amp;&amp; !to.node){
+            if(to.parent &amp;&amp; to.parent.node){
+                to.node = to.parent.node;
+            }
+        }
+&nbsp;
+        this.$rootScope.$broadcast("building-hovered", {to: to, from: from});
+&nbsp;
+        if (to !== null)
+        {
+            this.threeSceneService.getMapMesh().setHighlighted([to]);
+        }
+        else
+        {
+            this.threeSceneService.getMapMesh().clearHighlight();
+        }
+    }
+&nbsp;
+    /**
+     * called when a building is selected.
+     * @param from previously selected building
+     * @param to currently selected building
+     * @emits {building-selected} when building is selected
+     */
+    onBuildingSelected(from: codeMapBuilding, to: codeMapBuilding){
+        this.$rootScope.$broadcast("building-selected", {to: to, from:from});
+&nbsp;
+        if (to !== null)
+        {
+            this.threeSceneService.getMapMesh().setSelected([to]);
+        }
+        else
+        {
+            this.threeSceneService.getMapMesh().clearSelected();
+        }
+    }
+&nbsp;
+};
+&nbsp;
+export const codeMapComponent = {
+    selector: "codeMapComponent",
+    template: "&lt;div id='#codeMap'&gt;&lt;/div&gt;",
+    controller: CodeMapController
+};
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

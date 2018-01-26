@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/codeCharta/codeMap/rendering/codeMapMesh.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">app/codeCharta/codeMap/rendering</a> codeMapMesh.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as THREE from "three";
+&nbsp;
+import {codeMapShaderStrings} from "./codeMapShaderStrings";
+import {geometryGenerator, buildResult} from "./geometryGenerator";
+import {codeMapGeometricDescription} from "./codeMapGeometricDescription";
+import {intersectionResult} from "./codeMapGeometricDescription";
+impo<span class="fstat-no" title="function not covered" >rt</span> {codeMapBuilding} from "./codeMapBuilding";
+import {<span class="cstat-no" title="statement not covered" >renderingUtil} from "./renderingUtil";</span>
+import {node} from "./node";
+&nbsp;
+import {MapColors} from "./renderSettings"
+import {renderSettings} from "./renderSettings"
+&nbsp;
+interface threeUniform {
+    type : string;
+    value : any;
+}
+&nbsp;
+interfac<span class="cstat-no" title="statement not covered" >e codeMapLightingPar</span>ams {
+    numH<span class="cstat-no" title="statement not covered" >ighlights : threeUniform,</span>
+    numS<span class="cstat-no" title="statement not covered" >elections : threeUniform,</span>
+    highlightColor : th<span class="cstat-no" title="statement not covered" >reeUniform;</span>
+    high<span class="cstat-no" title="statement not covered" >lightedIndices : threeUniform;</span>
+    sele<span class="cstat-no" title="statement not covered" >ctedColor : threeUniform;</span>
+    sele<span class="cstat-no" title="statement not covered" >ctedIndices : threeUniform</span>;
+    emissive : threeUniform;
+<span class="fstat-no" title="function not covered" >    de</span>ltaColorPositive : threeUniform;
+    deltaColorNegative : threeUniform;
+}<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+interface mousePos {
+    x : number,
+    y : numb<span class="cstat-no" title="statement not covered" >er</span>
+}
+<span class="cstat-no" title="statement not covered" ></span>
+export class CodeMapMesh <span class="cstat-no" title="statement not covered" >{</span>
+    priv<span class="cstat-no" title="statement not covered" >ate threeMesh : THREE.Mesh;</span>
+    private material : THREE.ShaderMaterial;
+    private geomGen : geometryGenerator;
+    private mapGeomDesc : codeMapGeometricDescription;
+&nbsp;
+    private nodes : node[];
+&nbsp;
+<span class="fstat-no" title="function not covered" >    pr</span>ivate currentlyHighlighted : codeMapBuilding[] | null;
+    priv<span class="cstat-no" title="statement not covered" >ate currentlySelected : codeMapBuilding[] | null;</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    public settings : renderSettings;
+<span class="fstat-no" title="function not covered" ></span>
+    priv<span class="cstat-no" title="statement not covered" >ate lightingParams : codeMapLightingParams = {</span>
+<span class="cstat-no" title="statement not covered" >        numHighlights : {type : 'f', value : 0.0},</span>
+        highlightColor : {type : 'v3', value : renderingUtil.colorToVec3(0x666666)},
+<span class="fstat-no" title="function not covered" ></span>        highlightedIndices : {type : 'fv1', value : []},
+<span class="cstat-no" title="statement not covered" ></span>
+        numSelections : {type : 'f', value : 0.0},
+<span class="fstat-no" title="function not covered" ></span>        selectedColor : {type : 'f', value : renderingUtil.colorToVec3(MapColors.selected)},
+        selectedIndices : {type : 'fv1', value : []},
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+        deltaColorPositive : {type : 'v3', value : renderingUtil.colorToVec3(MapColors.positiveDelta)},
+<span class="cstat-no" title="statement not covered" >        deltaColorNegative : {type : 'v3', value : renderingUtil.colorT</span>oVec3(MapColors.negativeDelta)},
+<span class="cstat-no" title="statement not covered" ></span>
+        emis<span class="cstat-no" title="statement not covered" >sive : {type : 'v3', value : new THREE.Vector3(0.0, 0.0, 0.0)}</span>
+    };<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(nodes : node[], settings : renderSettings)
+    {
+<span class="cstat-no" title="statement not covered" >        this.nodes = nodes;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.initMaterial(settings);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+        this<span class="cstat-no" title="statement not covered" >.geomGen = new geometryGenerator();</span>
+<span class="cstat-no" title="statement not covered" >        let buildRes : buildResult = this.ge</span>omGen.build(this.nodes, this.material, settings);
+&nbsp;
+<span class="fstat-no" title="function not covered" ></span>        this.threeMesh = buildRes.mesh;
+<span class="cstat-no" title="statement not covered" >        this.mapGeomDesc = buildRes.desc;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" ></span>        this.settings = settings;
+    }<span class="cstat-no" title="statement not covered" ></span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    pr</span>ivate initMaterial(settings : renderSettings) : void
+    {
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        //TODO</span>
+        if(settings.deltaColorFlipped) {
+<span class="fstat-no" title="function not covered" ></span>            this.setDeltaColorsFlipped();
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.setDeltaColorsUnflipped();</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" ></span>        let uniforms = THREE.UniformsUtils.merge([THREE.UniformsLib['lights'], this.lightingParams]);
+<span class="cstat-no" title="statement not covered" ></span>
+        let shaderCode : codeMapShaderStrings = new codeMapShaderStrings();
+<span class="fstat-no" title="function not covered" ></span>
+        this.mater<span class="cstat-no" title="statement not covered" >ial =  new THREE</span>.ShaderMaterial({
+<span class="cstat-no" title="statement not covered" >            vertexShader: shaderCode.vertexShaderCode,</span>
+<span class="cstat-no" title="statement not covered" >            fragmentShader: shaderCode.fragmentShaderCode,</span>
+<span class="cstat-no" title="statement not covered" >            lights :</span> true,
+            uniforms : uniforms
+<span class="fstat-no" title="function not covered" ></span>        });
+    }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+    private setDeltaColorsFlipped() {
+<span class="fstat-no" title="function not covered" ></span>        this.lightingParams.deltaColorPositive = {type : 'v3', value : renderingUtil.colorToVec3(MapColors.negativeDelta)};
+<span class="cstat-no" title="statement not covered" >        this.lightingParams.deltaColorNegative = {type : 'v3', v</span>alue : renderingUtil.colorToVec3(MapColors.positiveDelta)};
+    }
+&nbsp;
+&nbsp;
+    private setDeltaColorsUnflipped() {
+        this.lightingParams.deltaColorPositive = {type : 'v3', value : renderingUtil.colorToVec3(MapColors.positiveDelta)};
+        this.lightingParams.deltaColorNegative = {type : 'v3', value : renderingUtil.colorToVec3(MapColors.negativeDelta)};
+    }
+&nbsp;
+    public getThreeMesh() : THREE.Mesh {
+        return this.threeMesh;
+    }
+&nbsp;
+    public setHighlighted(buildings : codeMapBuilding[], color? : number)
+    {
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.highlightedIndices.value = buildings.map((b : codeMapBuilding) =&gt; {return b.id});
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.numHighlights.value = buildings.length;
+&nbsp;
+        if (color)
+            this.lightingParams.highlightColor.value = renderingUtil.colorToVec3(color);
+&nbsp;
+        this.currentlyHighlighted = buildings;
+    }
+&nbsp;
+    public setSelected(buildings : codeMapBuilding[], color? : number)
+    {
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.selectedIndices.value = buildings.map((b : codeMapBuilding) =&gt; {return b.id});
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.numSelections.value  = buildings.length;
+        
+        if (color)
+            this.lightingParams.selectedColor.value = renderingUtil.colorToVec3(color);
+&nbsp;
+        this.currentlySelected = buildings;
+    }
+&nbsp;
+    public getCurrentlyHighlighted() : codeMapBuilding[] | null
+    {
+        return this.currentlyHighlighted;
+    }
+&nbsp;
+    public getCurrentlySelected() : codeMapBuilding[] | null
+    {
+        return this.currentlySelected;
+    }
+&nbsp;
+    public clearHighlight()
+    {
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.numHighlights.value = 0.0;
+        this.currentlyHighlighted = null;
+    }
+&nbsp;
+    public clearSelected()
+    {
+        //noinspection TypeScriptUnresolvedVariable
+        this.material.uniforms.numSelections.value = 0.0;
+        this.currentlySelected = null;
+    }
+&nbsp;
+    public getMeshDescription() : codeMapGeometricDescription
+    {
+        return this.mapGeomDesc;
+    }
+&nbsp;
+    private calculatePickingRay(mouse : mousePos, camera : THREE.Camera) : THREE.Ray
+    {
+&nbsp;
+        let ray : THREE.Ray = new THREE.Ray();
+        ray.origin.setFromMatrixPosition(camera.matrixWorld);
+        ray.direction.set(mouse.x, mouse.y, 0.5).unproject(camera).sub(ray.origin).normalize();
+&nbsp;
+        return ray;
+    }
+&nbsp;
+    public checkMouseRayMeshIntersection(mouse : mousePos, camera : THREE.Camera) : intersectionResult
+    {
+        let ray : THREE.Ray = this.calculatePickingRay(mouse, camera);
+        return this.getMeshDescription().intersect(ray);
+    }
+&nbsp;
+    public setScale(x : number, y : number, z : number)
+    {
+        this.mapGeomDesc.setScales(new THREE.Vector3(x, y, z));
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 26 2018 15:21:38 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
